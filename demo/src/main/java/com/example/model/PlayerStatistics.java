@@ -28,12 +28,12 @@ public class PlayerStatistics implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 953546382951282268L;
-	
+
 	@Id
 	@ManyToOne(optional = false)
 	@PrimaryKeyJoinColumn
 	private Player player;
-	
+
 	@Id
 	@ManyToOne(optional = false)
 	@PrimaryKeyJoinColumn
@@ -59,11 +59,11 @@ public class PlayerStatistics implements Serializable {
 	@CollectionTable
 	@MapKeyEnumerated(EnumType.STRING)
 	private Map<ScoreType, Integer> statistics = new HashMap<>();
-	
+
 	public PlayerStatistics() {
 		// intentionally left empty
 	}
-	
+
 	public PlayerStatistics(final Matchday matchday, final Player player, final Match match) {
 		this.matchday = matchday;
 		this.player = player;
@@ -128,7 +128,7 @@ public class PlayerStatistics implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(player, match.getPrimaryKey().getMatchday());
+		return Objects.hash(player, matchday);
 	}
 
 	@Override
@@ -138,8 +138,7 @@ public class PlayerStatistics implements Serializable {
 		}
 		if (obj instanceof PlayerStatistics) {
 			final PlayerStatistics o = (PlayerStatistics) obj;
-			return o.player.equals(player)
-					&& o.match.getPrimaryKey().getMatchday().equals(match.getPrimaryKey().getMatchday());
+			return o.player.equals(player) && matchday.equals(matchday);
 		} else {
 			return false;
 		}

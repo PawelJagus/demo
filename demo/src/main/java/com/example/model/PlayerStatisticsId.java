@@ -9,15 +9,15 @@ public class PlayerStatisticsId implements Serializable {
 	 */
 	private static final long serialVersionUID = -4174570034065835288L;
 
-	private long player;
+	private Player player;
 
-	private int matchday;
+	private Matchday matchday;
 
-	public long getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 
-	public int getMatchday() {
+	public Matchday getMatchday() {
 		return matchday;
 	}
 
@@ -28,7 +28,7 @@ public class PlayerStatisticsId implements Serializable {
 		}
 		if (obj instanceof PlayerStatisticsId) {
 			final PlayerStatisticsId o = (PlayerStatisticsId) obj;
-			return o.matchday == matchday && o.player == player;
+			return o.matchday.equals(matchday) && o.player.equals(player);
 		} else {
 			return false;
 		}
