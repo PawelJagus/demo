@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.hibernate</groupId>
+  <artifactId>hibernate-core</artifactId>
+  <versioning>
+    <versions>
+      <version>5.2.3.BUILD-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20160920085808</lastUpdated>
+  </versioning>
+</metadata>
